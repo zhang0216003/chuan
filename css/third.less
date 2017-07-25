@@ -1,0 +1,214 @@
+@import url(reset.css); //封装 宽高背景 属性
+.whb(@w, @h, @bg) {
+    width: @w;
+    height: @h;
+    background: @bg;
+}
+.wh(@w, @h) {
+    width: @w;
+    height: @h;
+}
+//封装新弹性盒  水平方向排列
+.box(@dir:row) {
+    display: flex; //将父元素设置成弹性盒布局
+    flex-direction: @dir; //设置子元素的排列方式
+}
+@myhead: #fa3b4d; //头部颜色
+@maincolor: #eeeeee; //主体颜色
+.font10 {
+    //变形  ：缩放（比例）
+    transform: scale(10/12);
+    //缩放中心改为左上角
+    transform-origin: left top;
+    //行内元素变为块元素
+    display: block;
+}
+//设置根元素100%宽高
+html,
+body,
+.container {
+    .full;
+}
+.full {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+//以上为公共样式
+.container {
+    .box(column);
+    .header {
+        .whb(100%,3.12rem,none);
+        background: url("../img/huabu.png") no-repeat;
+        background-size: 100% 100%;
+        position: relative;
+        .integral{
+            .wh(1.76rem,0.45rem);
+            position: absolute;
+            right: 0;
+            top: 0.96rem;
+            color: #fff;
+            font-size: 0.25rem;
+            background-image: -webkit-linear-gradient(left,#fc4356,#ff728a,#f82365);
+            border-radius: 0.22rem 0 0 0.22rem;
+           padding-left: 0.15rem;
+           box-sizing: border-box;
+           line-height: 0.45rem;
+            .integral-pic{
+                position: absolute;
+                right:0.2rem;
+                top: 0.12rem;
+                
+                
+                background: url(../img/jinru.png) no-repeat;
+                background-size: 0.14rem auto;
+                .wh(0.14rem,0.24rem);
+            }
+        }
+        .set{
+           .wh(0.4rem,0.4rem);
+            position: absolute;
+           right: 0.4rem;
+           top: 0.2rem;
+           background: url(../img/second/shezhi.png) no-repeat;
+           background-size: 0.4rem auto; 
+        }
+        .msg{
+            .wh(0.4rem,0.45rem);
+            position: absolute;
+           right: 1.36rem;
+           top: 0.2rem;
+           background: url(../img/second/lingdang.png) no-repeat;
+           background-size: 0.4rem auto;
+           .msg-num{
+                position: absolute;
+                right:-0.12rem;
+                top: -0.08rem;
+                 .whb(0.27rem,0.27rem,#f9384b);
+                 color: #fff;
+                 border-radius: 50%;
+                 line-height: 0.27rem;
+                 text-align: center;
+                 box-shadow: 0 1px 3px rgba(255,255,255,0.7);
+           }
+        }
+        .header-icon {
+            .box(column);
+            align-items: center;
+            .header-pic {
+                background: url("../img/icon.png") no-repeat;
+                background-size: 100% auto;
+                .wh(1.57rem,1.57rem);
+                margin-top: 0.30rem;
+            }
+            .header-text {
+                font-size: 0.24rem;
+                color: #fff;
+                margin-bottom: 0.15rem;
+                .header-pic-i {
+                    .wh(0.27rem,auto);
+                }
+            }
+            .header-btn {
+                color: #ff8401;
+                font-size: 0.26rem; //               align-items: center;
+                text-align: center;
+                line-height: 0.47rem;
+                .whb(2.48rem,0.47rem,#fff4e5);
+                border-radius: 0.06rem;
+                .header-btn-i {
+                    font-size: 0.19rem;
+                }
+                .header-btn-pic {
+                    .wh(0.27rem,auto);
+                }
+                .header-btn-sp {}
+            }
+        }
+    }
+    //  去掉右侧的滚动条
+    .main::-webkit-scrollbar {
+        width: 0;
+    }
+    .main {
+        overflow-x: none;
+        overflow-y: auto;
+        flex: 1;
+        background: #f3f3f3;
+        .main-title {
+            .whb(100%,1.58rem,#fff);
+            border-bottom: 1px solid #e5e5e5;
+            .box;
+            justify-content: space-around;
+            align-items: center;
+            .main-title-icon {
+                border-right: 1px solid #9f9f9f;
+                width: 33%;
+                text-align: center;
+                display: inline-block;
+                .main-title-pic1,
+                .main-title-pic2,
+                .main-title-pic3 {
+                    display: inline-block;
+                }
+                .main-title-text {
+                    display: block;
+                    text-align: center;
+                    color: #333333;
+                    font-size: 0.27rem;
+                    margin-top: 0.2rem;
+                }
+            }
+        }
+        .main-middle {
+            .whb(auto,0.84rem,#fff);
+            border-bottom: 1px solid #e2e2e2;
+            .box;
+            align-items: center;
+            padding: 0 0.4rem;
+            .main-middle-left {
+                .main-middle-left-l {}
+            }
+            .main-middle-center {
+                flex: 1;
+                margin-left: 0.2rem;
+                color: #373737;
+                font-size: 0.26rem;
+                .main-middle-center-i {
+                    margin-left: 0.10rem;
+                    color: #8e8e8e;
+                    font-size: 0.23rem;
+                }
+            }
+            .main-middle-right {
+                .main-middle-left-c {}
+            }
+        }
+    }
+    .footer {
+        .whb(100%,1.16rem,#f3f3f3);
+        margin-top: 0.2rem;
+        .box;
+        justify-content: space-around;
+        align-items: center;
+        .footer-title-icon {
+            width: 33%;
+            text-align: center;
+            display: inline-block;
+            .footer-title-pic1,
+            .footer-title-pic2,
+            .footer-title-pic3 {
+                display: inline-block;
+            }
+            .footer-title-text {
+                display: block;
+                text-align: center;
+                color: #333333;
+                font-size: 0.27rem;
+            }
+            .cla {
+                color: #f32c57;
+            }
+        }
+    }
+}

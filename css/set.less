@@ -1,0 +1,309 @@
+@import url(reset.css);
+.full(@w, @h, @bg) {
+    width: @w;
+    height: @h;
+    background: @bg;
+}
+
+.cen {
+    margin: 0 auto;
+}
+
+.fl{
+    float: left;
+}
+.fr{
+    float: right;
+}
+.father {
+    position: relative;
+}
+
+.son(@top, @right, @bottom, @left) {
+    position: absolute;
+    top: @top;
+    right: @right;
+    bottom: @bottom;
+    left: @left;
+}
+
+html,
+body,
+.box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.shu(@dir: horizontal) {
+    display: -webkit-box;
+    -webkit-box-orient: @dir;
+}
+
+.heng(@div: vertical) {
+    display: -webkit-box;
+    -webkit-box-orient: @div;
+}
+
+.yifen {
+    -webkit-box-flex: 1;
+}
+
+.chuizhi {
+    -webkit-box-align: center;
+}
+
+.shuipin {
+    -webkit-box-pack: center;
+}
+.box{
+    .heng;
+     background: #f3f3f3;
+    .top{
+      .full(100%,0.86rem,#fa5e6c);  
+      padding-left: 40px;
+      margin-bottom: 11px;
+      .shu;
+      .chuizhi;
+      .father;
+      img{
+          position: absolute;
+          top:30%;
+          left: 5%;
+      }
+      h3{
+          position: absolute;
+          top:20%;
+          left: 43%;
+          text-align: center;
+          .yifen;
+          font-size: 35px;
+          a{
+              color: #FFFFFF;
+          }
+      }
+    }
+    .top1{
+      .full(100%,0.86rem,#fa5e6c);  
+      padding-left: 40px;
+      .shu;
+      .chuizhi;
+      .father;
+      img{
+          position: absolute;
+          top:30%;
+          left: 5%;
+      }
+      h3{
+          position: absolute;
+          top:20%;
+          left: 43%;
+          text-align: center;
+          .yifen;
+          font-size: 35px;
+          a{
+              color: #FFFFFF;
+          }
+      }
+    }
+    .content{
+      .yifen;
+      overflow: auto;
+       .tiao{
+           padding-left: 40px;
+           .shu;
+           background: #ffffff;
+           margin-bottom: 1px;
+           line-height: 89px;
+           font-size: 30px;
+           a{
+               color: #6e6e6e;
+           }
+           .zuo{
+               .yifen;
+           }
+           .you{
+               margin-right: 41px;
+               a{
+                   color: #999999;
+               }
+               span{
+                   margin-left: 0.55rem;
+               }
+           }
+           
+       }
+       .tiao1{
+          padding-left: 40px;
+           .shu;
+           background: #ffffff;
+           margin-bottom: 1px;
+           line-height: 1.19rem;
+           
+           font-size: 30px;
+           a{
+               color: #333333;
+           }
+           .aa5{
+               margin-top: 10%;
+               display: block;
+               .full(0.98rem,0.96rem,none);
+               background: url(../img/touxiang.png) no-repeat;
+               background-size: 100%;
+               
+               padding-right: 0;
+                img{
+                    height: 0.88rem;  
+                    padding: 0.05rem;              
+                    }
+           }
+           .zuo{
+               .yifen;
+           }
+           .you{
+               margin-right: 41px;
+           } 
+       }
+      .quit{
+            margin: 0.4rem;
+           font-size: 33px;
+           text-align: center;
+           border-radius: 20px;
+           overflow: hidden;
+           margin-top: 256px;
+           a{
+               .full(100%,0.9rem,#f9384b);
+               display: block;
+              color: #FFFFFF;
+              line-height: 0.9rem;
+              
+           }
+       }
+    }
+     
+}
+.zhe{
+   width: 100%;
+   height: 100%;
+    background: rgba(0,0,0,0.3);
+    .son(0px,0px,0px,0px);
+    z-index: 999999;
+    .inquiry{
+        .heng;
+        position: absolute;
+       left: 50%;
+       top: 50%;
+        .full(4.56rem,2.46rem,#ffffff);
+        margin-left: -2.28rem;
+        margin-top: -1.23rem;
+        border-radius: 16px;
+        font-size: 30px;
+        .shang{
+            .shu;
+            .shuipin;
+            .chuizhi;
+            height: 1.47rem;
+            h6{
+                a{
+                    color: #333333;
+                }
+            }
+        }
+        .xia{
+            border-top: 2px solid #f5f5f5;
+            text-align: center;
+            height: 0.92rem;
+            line-height: 0.92rem;
+            .shu;
+            a{
+                display: block;
+                .yifen;
+            }
+            .ss2{
+                background: url(../img/qinbian.png) no-repeat left center;
+                span{
+                    color: #ff9914;
+                }
+            }
+        }
+        .tiaotiao{
+            .yifen;
+            .heng;
+            .shuipin;
+            padding-left: 0.56rem;
+            border-bottom: 1px solid #eeeeee;
+             a{
+                color: #585858;
+            }           
+        }
+        .tiaotiao1
+        {
+            .yifen;
+            .heng;
+            .shuipin;
+            padding-left: 0.56rem; 
+            border: none;
+            a{
+                color: #585858;
+            }
+        }
+    }
+    .inquiry1{
+        position: absolute;
+       left: 50%;
+       top: 30%;
+        .full(4.72rem,2.69rem,#ffffff);
+        margin-left: -2.28rem;
+        margin-top: -1.23rem;
+        border-radius: 16px;
+        font-size: 30px;
+        overflow: hidden;
+        .shang{
+            .heng;
+            .shuipin;
+            .chuizhi;
+            height: 1.81rem;
+             margin-bottom: 0.27rem;
+            h5{
+                margin-top: 0.3rem;
+               font-size: 0.3rem; 
+               text-align: center;
+                a{
+                    color: #666666;
+                }
+            }
+            form{
+                margin-top: 0.27rem;
+                .full(4.01rem,0.52rem,none);
+                border-bottom: 2px solid #ffc272;
+                .texta{
+                    color: #cccccc;
+                    width: 100%;
+                    text-align: center;
+                    border: none;
+                    outline: none;
+                    margin-bottom: 0.27rem;
+                }
+            }
+            
+        }
+        .xia{
+           overflow: hidden;
+            text-align: center;
+            .shu;
+            a{
+                height: 0.54rem;
+                line-height: 0.54rem;
+                display: block;
+                .yifen;
+            }
+            .ss2{
+                span{
+                    color: #f9384b;
+                }
+            }
+        }
+        
+    }
+            
+}

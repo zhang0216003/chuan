@@ -1,0 +1,224 @@
+@import url(reset.css); //封装 宽高背景 属性
+.whb(@w, @h, @bg) {
+    width: @w;
+    height: @h;
+    background: @bg;
+}
+.wh(@w, @h) {
+    width: @w;
+    height: @h;
+}
+//封装新弹性盒  水平方向排列
+.box(@dir:row) {
+    display: flex; //将父元素设置成弹性盒布局
+    flex-direction: @dir; //设置子元素的排列方式
+}
+@myhead: #fa3b4d; //头部颜色
+@maincolor: #eeeeee; //主体颜色
+.font10 {
+    //变形  ：缩放（比例）
+    transform: scale(10/12);
+    //缩放中心改为左上角
+    transform-origin: left top;
+    //行内元素变为块元素
+    display: block;
+}
+//设置根元素100%宽高
+html,
+body,
+.container {
+    .full;
+}
+.full {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+//以上为公共样式
+.container {
+    .box(column);
+    .header {
+        .box;
+        align-items: center;
+        .whb(100%,0.9rem,@myhead);
+        background-image: -webkit-linear-gradient(left,@myhead,#fa6372);
+        .header-title-pic {
+            .wh(0.35rem,0.35rem);
+            background: url("../img/arrows.png") no-repeat;
+            background-size: 0.35rem;
+            margin-left: 0.4rem;
+            box-sizing: border-box;
+        }
+        .header-title {
+            flex: 1;
+            color: #fff;
+            font-size: 0.35rem;
+            text-align: center;
+        }
+    }
+    //  去掉右侧的滚动条
+    .main::-webkit-scrollbar {
+        width: 0;
+    }
+    .main {
+        .whb(100%,auto,#eeeeee);
+        overflow-x: none;
+        overflow-y: auto;
+        flex: 1;
+        .main-first {
+            .whb(null,7rem,#fff);
+            border-radius: 0.2rem;
+            box-shadow: 0 0 10px #BFBFBF;
+            margin: 0.2rem;
+            .main-first-up {
+                .box;
+                align-items: center;
+                .wh(auto,1.4rem);
+                .first-one {
+                    .main-first-pic {
+                        .wh(0.96rem,auto);
+                        margin-left: 0.2rem;
+                    }
+                }
+                .first-two {
+                    margin-left: 0.2rem;
+                    .first-text-xiao {
+                        color: #353535;
+                        font-size: 0.32rem;
+                    }
+                    .first-date {
+                        color: #979797;
+                        font-size: 0.15rem;
+                    }
+                }
+            }
+            //          <!--传传 小编-->
+            //      <!--文字-->
+            .first-text-h1 {
+                color: #323232;
+                font-size: 0.35rem;
+                margin-left: 0.2rem;
+            }
+            //          <!--big-pic-->
+            .big-img {
+                margin: 0.2rem;
+                .first-big {
+                    .wh(100%,100%);
+                    margin: 0 auto;
+                    overflow: hidden;
+                }
+            }
+        }
+        //main-first
+        .main-second {
+            margin: 0.2rem;
+            background: #fff;
+            .second-title {
+                .wh(auto,0.56rem);
+                padding-left: 0.2rem;
+                border-bottom: 1px solid #e2e2e2;
+                color: #fb9c1a;
+                font-size: 0.25rem;
+                line-height: 0.56rem;
+            }
+            .second-body {
+                .box;
+                .wh(auto,2.83rem);
+                border-bottom: 1px solid #e2e2e2;
+                .second-body-one {
+                    .second-body-pic {
+                        .wh(0.54rem,0.54rem);
+                        margin: 0.2rem 0.13rem auto 0.2rem;
+                    }
+                }
+                .second-body-two {
+                    flex: 1;
+                    margin-top: 0.2rem;
+                    .second-body-two-h4 {
+                        color: #2a2a2a;
+                        font-size: 0.24rem;
+                    }
+                    .second-body-two-p1 {
+                        color: #a8a8a8;
+                        font-size: 0.15rem;
+                    }
+                    .second-body-two-p2 {
+                        color: #2a2a2a;
+                        font-size: 0.24rem;
+                        width: 2.7rem;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                    .second-body-two-why {
+                        background: #eeeeee;
+                        .wh(auto,1.19rem);
+                        line-height: 0.6rem;
+                        margin-top: 0.2rem;
+                        .second-body-two-why-h5 {
+                            padding-left: 10px;
+                            color: #4669df;
+                            font-size: 0.25rem;
+                            .second-body-two-why-i {
+                                color: #2a3026;
+                                font-size: 0.25rem;
+                            }
+                        }
+                        .second-body-two-p3 {
+                            padding-left: 10px;
+                            color: #4669df;
+                            font-size: 0.25rem;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                .second-body-three {
+                    margin-top: 0.2rem;
+                    .second-body-three-pic-zan {
+                        .wh(0.37rem,0.39rem);
+                        margin-right: 0.43rem;
+                    }
+                    .second-body-three-pic-toggle {
+                        .wh(0.4rem,0.4rem);
+                        margin-right: 0.2rem;
+                    }
+                }
+            }
+            //         主体的第二部分
+            .second-body-middle {
+                .wh(auto,1.54rem);
+            }
+        }
+        //main-second
+    }
+    //main
+    .footer {
+        .box;
+        .whb(100%,0.9rem,#fff);
+        border-top: 1px solid #d9d9d9;
+        justify-content: space-around;
+        align-items: center;
+        .footer-icon {
+            border-right: 1px solid #9f9f9f;
+            width: 33%;
+            text-align: center;
+            .footer-pic1 {
+                .wh(0.36rem,0.37rem);
+            }
+            .footer-pic2 {
+                .wh(0.4rem,0.4rem);
+            }
+            .footer-pic3 {
+                .wh(0.39rem,0.4rem);
+            }
+            .footer-text {
+                font-size: 0.32rem;
+                color: #9f9f9f;
+            }
+            &:last-child {
+                border-right: none;
+            }
+        }
+    }
+}
+//container
